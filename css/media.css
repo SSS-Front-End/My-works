@@ -2,6 +2,7 @@
     :root {
         --body: #151437;
         --color: #fff;
+        --slogan-bg: #7177F1;
     }
 
     .logo__dark {
@@ -24,5 +25,18 @@
         max-width: 190px;
         width: 100%;
     }
+
+    .about__content {
+        min-height: auto;
+    }
     
+    .about__title {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .about__title {
+        line-height: 120%;
+    }
 }

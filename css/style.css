@@ -1,4 +1,5 @@
 @import url(../css/fonts.css);
+
 /* ROOT START */
 :root {
     --font-base: "Montserrat";
@@ -11,13 +12,40 @@
     --link: #7177F1;
     --dot: #828282;
     --dotActiv: #7177F1;
+    --sloganBg: #fff;
+    --accordionBg: #7177F1;
+    --accordionCol: #fff;
+}
+
+.shape {
+    position: absolute;
+    z-index: -1;
+}
+
+.shape_1 {
+    top: -199px;
+    right: 0;
+    max-width: 45%;
+    width: 100%;
 }
 
 a {
     text-decoration: none;
 }
 
-h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1, p {
+h6,
+.h6,
+h5,
+.h5,
+h4,
+.h4,
+h3,
+.h3,
+h2,
+.h2,
+h1,
+.h1,
+p {
     margin-bottom: 0;
 }
 
@@ -42,7 +70,7 @@ body {
 }
 
 .button:hover {
-    background: var(--btn-text) ;
+    background: var(--btn-text);
     color: var(--btnBg) !important;
 }
 
@@ -83,6 +111,15 @@ body {
     transform: rotate(41.09deg);
     right: 315px;
     bottom: 196px;
+}
+
+.title {
+    margin: 75px 0 30px 0;
+    color: var(--title);
+    font-size: 40px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: capitalize;
 }
 
 /* ROOT END */
@@ -127,8 +164,9 @@ body {
 
 .navbar-toggler:focus {
     box-shadow: 0 0 5px var(--link);
-    
+
 }
+
 /* HEADER END */
 /* ========================== */
 /* SLIDER START */
@@ -184,7 +222,7 @@ body {
 
 .slider__indicators {
     position: static;
-    margin: 50px 0 0 0;
+    margin: 50px 0 75px 0;
 }
 
 .slider__indicators .slider__dot {
@@ -199,13 +237,187 @@ body {
 .slider__indicators .slider__dot.active {
     background: var(--dotActiv);
 }
+
 /* SLIDER END */
 /* ========================== */
-/* ROOT START */
-/* ROOT END */
+/* ABOUT START */
+
+.about__slogan {
+    background: var(--sloganBg);
+    text-transform: uppercase;
+    box-shadow: 0px 0px 20px rgba(113, 119, 241, 0.5);
+    border-radius: 8px;
+    max-width: 190px;
+    width: 100%;
+    /* text-align: center; */
+    padding: 24px 30px 23px 20px;
+    font-size: 18px;
+    line-height: 100%;
+    font-weight: 400;
+    position: absolute;
+    top: 19px;
+    left: 15px;
+}
+
+.about__rating {
+    background: #0FDAC2;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--btn-text);
+    font-weight: 700;
+    font-style: italic;
+    position: absolute;
+    top: -14px;
+    right: -10px;
+}
+
+.about__img {
+    width: 100%;
+    max-width: 460px;
+    /* text-align: center; */
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.about__content {
+    background: var(--body);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0px 0px 5px 3px rgba(113, 119, 241, 0.15);
+    min-height: 450px;
+    height: 100%;
+}
+
+.about__title {
+    font-family: var(--font-alt);
+    font-size: 40px;
+    color: var(--title);
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.about__desc {
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: capitalize;
+    margin-bottom: 27px;
+}
+
+.about__desc:last-of-type {
+    margin-bottom: 21px;
+}
+
+.about__btn {
+    max-width: 190px;
+    width: 100%;
+    text-transform: uppercase;
+    margin-left: 80px;
+}
+
+/* ABOUT END */
 /* ========================== */
-/* ROOT START */
-/* ROOT END */
+/* ACCORDION START */
+.accordion__btn {
+    border: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: var(--body);
+    font-weight: 900;
+    font-size: 18px;
+    color: var(--title);
+    padding: 15px 30px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.accordion__btn::after {
+    content: "";
+    /* width: 100%; */
+    position: absolute;
+    height: 1px;
+    left: 10px;
+    right: 10px;
+    bottom: 0;
+    background: #ddd;
+}
+
+.accordion__logo {
+    width: 45px;
+    height: 30px;
+    object-fit: contain;
+    object-position: left;
+}
+
+.accordion__icon {
+    width: 45px;
+    line-height: 30px;
+    font-size: 35px;
+    text-align: left;
+    display: none;
+}
+
+.accordion__arrow {
+    line-height: 10px;
+    font-size: 27px;
+    margin-left: auto;
+    transition: 0.5s;
+}
+
+.accordion__btn:not(.collapsed) {
+    background: var(--accordionBg);
+    color: var(--accordionCol);
+}
+
+.accordion__btn:not(.collapsed) .accordion__logo {
+    display: none;
+}
+
+.accordion__btn:not(.collapsed) .accordion__icon {
+    display: inline-block;
+}
+
+.accordion__btn:not(.collapsed) .accordion__arrow {
+    transform: rotate(180deg);
+}
+
+.accordion__btn:not(.collapsed)::after {
+    display: none;
+}
+
+.accordion-item:last-of-type .accordion__btn::after {
+    display: none;
+}
+
+.accordion-item {
+    border: none;
+}
+
+.accordion__desc {
+    background: var(--accordionBg);
+    color: var(--accordionCol);
+    line-height: 150%;
+    font-size: 18px;
+    padding: 10px 30px 52px 30px;
+
+}
+
+.accordion {
+    box-shadow: 0px 0px 5px 3px rgba(113, 119, 241, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+
+
+/* ACCORDION END */
 /* ========================== */
 /* ROOT START */
 /* ROOT END */
