@@ -71,3 +71,57 @@
         transform: translate(-500px, 118px) rotate(+88.7deg);
     }
 }
+
+.rectangle_5 {
+    animation: move5;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+@keyframes move5 {
+    0% {
+        transform: translate(0, 400px) rotate(-400.23deg);
+    }
+
+    100% {
+        transform: translate(-500px, 118px) rotate(+88.7deg);
+    }
+}
+
+.rectangle_6 {
+    animation: move6;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+@keyframes move6 {
+    0% {
+        transform: translate(500px, -1px) rotate(-400.23deg);
+    }
+
+    100% {
+        transform: translate(-500px, 118px) rotate(+88.7deg);
+    }
+}
+
+.rectangle_7 {
+    animation: move7;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+@keyframes move7 {
+    0% {
+        transform: translate(0, 100px) rotate(-400.23deg);
+    }
+
+    100% {
+        transform: translate(500px, -500px) rotate(+88.7deg);
+    }
+}
